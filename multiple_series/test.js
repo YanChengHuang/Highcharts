@@ -56,7 +56,7 @@ function success(data) {
   // will arrive. So we keep a counter and create the chart when all the data is loaded.
   seriesCounter += 1;
 
-  if (seriesCounter === names.length) { //當 i = 3 等於三條線的data都抓到了 可以開始畫圖
+  if (seriesCounter === names.length) { //當 i = 3  三條線的data都抓到了 開始畫圖
     createChart();
   }
 }
