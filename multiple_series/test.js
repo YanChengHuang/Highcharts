@@ -29,7 +29,7 @@ function createChart() {
     plotOptions: {
       series: {
         compare: 'percent',//以第一個非零整數當0%做比較
-        showInNavigator: true
+        showInNavigator: false
       }
     },
 
@@ -46,7 +46,7 @@ function createChart() {
 function success(data) {
   var name = this.url.match(/(msft|aapl|goog)/)[0].toUpperCase(); //偵測url裡有 msft,aapl,goog 哪個 並轉成大寫
   var i = names.indexOf(name); //偵測到的array ['MSFT', 'AAPL', 'GOOG'] 位置
-  // console.log(names)
+  // console.log(this.url.match(/(msft|aapl|goog)/))
   seriesOptions[i] = { //定義data
     name: name,
     data: data
@@ -56,7 +56,7 @@ function success(data) {
   // will arrive. So we keep a counter and create the chart when all the data is loaded.
   seriesCounter += 1;
 
-  if (seriesCounter === names.length) { //當 i = 3  三條線的data都抓到了 開始畫圖
+  if (seriesCounter === names.length) { //當 seriesCounter = 3 => 三條線的data都抓到了 開始畫圖
     createChart();
   }
 }

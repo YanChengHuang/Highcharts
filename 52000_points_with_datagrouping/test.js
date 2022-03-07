@@ -2,18 +2,14 @@ Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/sam
 
   // Create a timer
   var start = +new Date(); //獲取現在時間
-    console.log(start)
-    console.log(data)
   // Create the chart
   Highcharts.stockChart('container', {
     chart: {
       events: {
         load: function () { // 當 chart 設定完成時執行
-        //   if (!window.TestController) {
             this.setTitle(null, {
               text: 'Built chart in ' + (new Date() - start) + 'ms' //現在時間 - start = chart 花費時間
             });
-        //   }
         }
       },
       zoomType: 'xy'
