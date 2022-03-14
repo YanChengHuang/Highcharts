@@ -30,6 +30,7 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-c.json', data => 
       rules: [{
         condition: { //Under which conditions the rule applies.
           maxWidth: 500
+          //maxHeight
         },
         chartOptions: {
           chart: {
@@ -40,7 +41,17 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-c.json', data => 
           },
           navigator: {
             enabled: false
-          }
+          },
+          // series: [{
+          //   name: 'AAPL Stock Price',
+          //   data: data,
+          //   type: 'area',
+          //   threshold: null,
+          //   tooltip: {
+          //     valueDecimals: 1
+          //   },
+          //   color:'green',
+          // }],
         }
       }]
     }
