@@ -57,7 +57,11 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlc.json', funct
         style: {
           fontSize: 9
         }
-      }
+      },
+      params:{
+        algorithm: 'standard',
+        period : 14
+      },
     }, {
       type: 'macd',
       yAxis: 1,
