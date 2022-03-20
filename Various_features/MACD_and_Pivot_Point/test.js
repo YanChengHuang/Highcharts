@@ -44,7 +44,7 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlc.json', funct
       id: 'aapl',
       name: 'AAPL Stock Price',
       data: data,
-      zIndex: 1
+      zIndex: 1 //設定哪個圖優先顯示
     }, {
       type: 'pivotpoints',
       linkedTo: 'aapl',
@@ -59,8 +59,10 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlc.json', funct
         }
       },
       params:{
-        algorithm: 'standard',
-        period : 14
+        // Implemented algorithms: 'standard', 'fibonacci' and 'camarilla'
+        // wikipedia : https://en.wikipedia.org/wiki/Pivot_point_(technical_analysis)
+        algorithm: 'standard',//設定算法
+        period : 14 //設定週期
       },
     }, {
       type: 'macd',
