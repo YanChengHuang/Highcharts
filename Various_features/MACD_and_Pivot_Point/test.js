@@ -67,7 +67,11 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlc.json', funct
     }, {
       type: 'macd',
       yAxis: 1,
-      linkedTo: 'aapl'
+      linkedTo: 'aapl',
+      // params:{
+      //   longperiod: The long period for indicator calculations
+      //   shortPeriod: The short period for indicator calculations.
+      // },
     }]
   });
 });
