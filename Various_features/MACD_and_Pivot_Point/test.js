@@ -61,6 +61,10 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlc.json', funct
       params:{
         // Implemented algorithms: 'standard', 'fibonacci' and 'camarilla'
         // wikipedia : https://en.wikipedia.org/wiki/Pivot_point_(technical_analysis)
+        //standardPlacement=
+            // function(b){var a=b[1]-b[2] ;//high-low
+            //   return[null,null,b[0]+a,2*b[0]-b[2],b[0],2*b[0]-b[1],b[0]-a,null,null]} b[0]=(H + L + C) / 3.
+
         algorithm: 'standard',//設定算法
         period : 14 //設定週期
       },
