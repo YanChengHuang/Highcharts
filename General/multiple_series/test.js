@@ -12,27 +12,6 @@ function createChart() {
       selected: 4
     },
 
-    // yAxis: {
-    //   labels: {
-    //     formatter: function () {
-    //       // console.log(this.value)
-    //       return (this.value > 0 ? ' + ' : '') + this.value + '%'; //定義Y軸格式
-    //     }
-    //   },
-    //   plotLines: [{
-    //     value: 0, //y軸位置
-    //     width: 5,//y軸寬度
-    //     color: 'silver'//y軸顏色
-    //   }]
-    // },
-
-    // plotOptions: {
-    //   series: {
-    //     compare: 'percent',//以第一個非零整數當0%做比較
-    //     showInNavigator: false
-    //   }
-    // },
-
     tooltip: {
       pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>', // HTML
       valueDecimals: 2, //小數點後幾位
