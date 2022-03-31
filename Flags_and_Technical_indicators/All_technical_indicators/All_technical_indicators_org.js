@@ -2,27 +2,7 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlcv.json', func
   // split the data set into ohlc and volume
   var ohlc = [],
     volume = [],
-    indicator_pos = 2,
-    dataLength = data.length,
-    height = 600,
-    top = 300;
-    series =[{
-      type: 'candlestick',
-      id: 'aapl',
-      name: 'AAPL',
-      data: data
-    }, {
-      type: 'column',
-      id: 'volume',
-      name: 'Volume',
-      data: volume,
-      yAxis: 1
-    }, {
-      type: 'pc',
-      id: 'overlay',
-      linkedTo: 'aapl',
-      yAxis: 0
-    }];
+    dataLength = data.length;
 
   for (var i = 0; i < dataLength; i += 1) {
     ohlc.push([
@@ -42,7 +22,7 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlcv.json', func
   // create the chart
   Highcharts.stockChart('container', {
     chart: {
-      height: height
+      height: 600
     },
     title: {
       text: 'AAPL Historical'
@@ -57,25 +37,47 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlcv.json', func
       selected: 2
     },
     yAxis: [{
-      height: 207
+      height: '60%'
     }, {
-      top: top,
-      height: 138
+      top: '60%',
+      height: '20%'
+    }, {
+      top: '80%',
+      height: '20%'
     }],
     plotOptions: {
       series: {
         showInLegend: true
       }
     },
-    series: series
-    
-
+    series: [{
+      type: 'candlestick',
+      id: 'aapl',
+      name: 'AAPL',
+      data: data
+    }, {
+      type: 'column',
+      id: 'volume',
+      name: 'Volume',
+      data: volume,
+      yAxis: 1
+    }, {
+      type: 'pc',
+      id: 'overlay',
+      linkedTo: 'aapl',
+      yAxis: 0
+    }, {
+      type: 'macd',
+      id: 'oscillator',
+      linkedTo: 'aapl',
+      yAxis: 2
+    }]
   }, function (chart) {
     document.getElementById('overlays').addEventListener('change', function (e) {
       var series = chart.get('overlay');
-        // console.log(series)
+
       if (series) {
-        series.remove(false); // Whether to redraw the chart
+        series.remove(false);
         chart.addSeries({
           type: e.target.value,
           linkedTo: 'aapl',
@@ -83,29 +85,19 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlcv.json', func
         });
       }
     });
+
     document.getElementById('oscillators').addEventListener('change', function (e) {
-        height += 138;
-        top += 138 ;
-        const axisId = 'yaxis-' + (++indicator_pos)
-        chart.update({
-          chart: {
-            height: height
-          },
-          subtitle: {
-              text: `update`
-          }
-        });
-        chart.addAxis({
-          id: axisId,
-          top: top,
-          height: 138
-        }, false)
+      var series = chart.get('oscillator');
+
+      if (series) {
+        series.remove(false);
         chart.addSeries({
-            type: e.target.value,
-            id: 'oscillator',
-            linkedTo: 'aapl',
-            yAxis: axisId
-        }); 
-          });
+          type: e.target.value,
+          linkedTo: 'aapl',
+          id: 'oscillator',
+          yAxis: 2
+        });
+      }
+    });
   });
 });
