@@ -77,7 +77,7 @@ Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlcv.json', func
       var series = chart.get('overlay');
 
       if (series) {
-        series.remove(false);
+        series.remove(false);//不要重畫
         chart.addSeries({
           type: e.target.value,
           linkedTo: 'aapl',

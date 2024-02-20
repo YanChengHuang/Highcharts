@@ -31,11 +31,11 @@ Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/sam
       type: 'flags',
       data: [{
         x: Date.UTC(year, 1, 22),
-        title: 'A',
+        title: ' ',
         text: 'Shape: "squarepin"'
       }, {
         x: Date.UTC(year, 3, 28),
-        title: 'A',
+        title: ' ',
         text: 'Shape: "squarepin"'
       }],
       onSeries: 'dataseries',
@@ -45,11 +45,11 @@ Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/sam
     type: 'flags',
     data: [{
         x: Date.UTC(year, 1, 27),
-        title: 'D',
+        title: ' ',
         text: 'Shape: "squarepin"'
     }, {
         x: Date.UTC(year, 3, 21),
-        title: 'D',
+        title: ' ',
         text: 'Shape: "squarepin"'
     }],
     color: Highcharts.getOptions().colors[0], // 邊框顏色
@@ -61,11 +61,11 @@ Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/sam
       type: 'flags',
       data: [{
         x: Date.UTC(year, 2, 1),
-        title: 'B',
+        title: ' ',
         text: 'Shape: "circlepin"'
     }, {
         x: Date.UTC(year, 3, 1),
-        title: 'B',
+        title: ' ',
         text: 'Shape: "circlepin"'
       }],
       shape: 'circlepin',
@@ -74,11 +74,11 @@ Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/sam
       type: 'flags',
       data: [{
         x: Date.UTC(year, 2, 10),
-        title: 'C',
+        title: ' ',
         text: 'Shape: "flag"'
       }, {
         x: Date.UTC(year, 3, 11),
-        title: 'C',
+        title: ' ',
         text: 'Shape: "flag"'
       }],
       color: Highcharts.getOptions().colors[0], // same as onSeries
